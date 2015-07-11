@@ -1,4 +1,4 @@
-# py-cooperhewitt
+# py-cooperhewitt-api-multiclient
 
 Python bindings to the Cooper-Hewitt collections API with support for multiple parallel requests (using grequest).
 
@@ -41,6 +41,7 @@ print pprint.pformat(rsp)
 	
 ## See also
 
+* [py-cooperhewitt-api](https://github.com/cooperhewitt/py-cooperhewitt-api)
 * [Smithsonian Cooper-Hewitt National Design Museum collections website](https://collection.cooperhewitt.org/)
 * [Smithsonian Cooper-Hewitt National Design Museum collections API](https://collection.cooperhewitt.org/api/)
 
