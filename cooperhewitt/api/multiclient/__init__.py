@@ -1,0 +1,19 @@
+# https://pythonhosted.org/setuptools/setuptools.html#namespace-packages
+__import__('pkg_resources').declare_namespace(__name__)
+
+import cooperhewitt.api.client
+
+class OAuth2(cooperhewitt.api.client.OAuth2):
+
+    def execute_method(self, multi, size=10):
+
+        req = []
+
+        for details in multi:
+            url, args = self.prepare_request(*details)
+            req.append(grequests.post(url, **args))
+
+        rsp = grequests.map(req)
+
+        for r in rsp:
+            yield self.parse_response(r)
