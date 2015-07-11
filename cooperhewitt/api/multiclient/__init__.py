@@ -2,10 +2,11 @@
 __import__('pkg_resources').declare_namespace(__name__)
 
 import cooperhewitt.api.client
+import grequests
 
 class OAuth2(cooperhewitt.api.client.OAuth2):
 
-    def execute_method(self, multi, size=10):
+    def execute_methods(self, multi, size=10):
 
         req = []
 

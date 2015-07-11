@@ -12,8 +12,11 @@ $> python setup.py install
 
 ## Example
 
-```
+`cooperhewitt.api.multiclient` subclasses `cooperhewitt.api.client` and exports
+a single additional `execute_methods` that takes a list of (method, args) tuples
+and returns a generator (of standard `execute_method` responses.
 
+```
 import cooperhewitt.api.multiclient
 import pprint
 
@@ -28,8 +31,12 @@ reqs = (
     ('cooperhewitt.objects.getRandom', {'has_image': 1}),
 )
 
-for rsp in api.execute_method_multi(reqs):
-    print rsp
+for rsp in api.execute_methods(reqs):
+    print pprint.pformat(rsp)
+
+rsp = api.execute_method(*req[1]):
+print pprint.pformat(rsp)
+
 ```
 	
 ## See also
